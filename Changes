@@ -1,6 +1,11 @@
 Revision history for Module::ConfigureRequires
 
 ----------------------------------------------------------------------
-0.01  8 November, 2009
+0.02  20 June, 2010
+
+Fixed so that indexing programs don’t see the MY package.
+
+----------------------------------------------------------------------
+0.01  20 June, 2010
 
 First release.

@@ -1,5 +1,5 @@
 package Module::ConfigureRequires;
-$VERSION = '0.01';
+$VERSION = '0.02';
 
 sub inc::Module::ConfigureRequires::import {
  $recursive = $ARGV[0] eq 'mcrrecursive' ? shift @ARGV : 0;
@@ -44,7 +44,8 @@ sub set_up_for_mm {
 Please install all the modules that this software requires, and then
 re-run $0.
 
-  package MY;
+  package
+   MY;
   *top_targets = sub {
     my $inherited = SUPER'top_targets{shift}@'_;
     my $mpl_args = join " ", map qq["$_"], @ARGV;
