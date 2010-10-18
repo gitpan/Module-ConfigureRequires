@@ -1,4 +1,4 @@
-Module::ConfigureRequires, version 0.02 (beta)
+Module::ConfigureRequires, version 0.03 (beta)
 
 A CPAN distribution's META.yml can contain a configure_requires entry,
 that  lists  modules  needed  for  Makefile.PL  or  Build.PL  to  run.
@@ -34,6 +34,11 @@ this setup:
 
 See the POD  documentation  in  lib/Module/ConfigureRequires.pod  (or
 use perldoc or man after installation) for more information.
+
+
+CHANGES IN THIS RELEASE
+
+Fixed to work with XS modules that use ExtUtils::MakeMaker.
 
 
 INSTALLATION

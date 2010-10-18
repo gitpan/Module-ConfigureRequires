@@ -1,7 +1,11 @@
 
+=head1 NAME
+
+Module::ConfigureRequires - Backward-compatible configure_requires replacement
+
 =head1 VERSION
 
-0.02 (beta)
+0.03 (beta)
 
 =head1 SYNOPSIS
 

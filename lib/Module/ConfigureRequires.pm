@@ -1,5 +1,5 @@
 package Module::ConfigureRequires;
-$VERSION = '0.02';
+$VERSION = '0.03';
 
 sub inc::Module::ConfigureRequires::import {
  $recursive = $ARGV[0] eq 'mcrrecursive' ? shift @ARGV : 0;
@@ -50,9 +50,11 @@ re-run $0.
     my $inherited = SUPER'top_targets{shift}@'_;
     my $mpl_args = join " ", map qq["$_"], @ARGV;
     $inherited
-     =~ s<^(all\s*::.*?(\r?\n))><
-           "$1\t\$(PERLRUN) Makefile.PL mcrrecursive $mpl_args$2"
-          ."\t\$(MAKE) \$(PASTHRU)$2"
+     =~ s<^(all\s*::)(.*?(\r?\n))><
+           "newmakefilepl ::$3"
+          ."\t\$(PERLRUN) Makefile.PL mcrrecursive $mpl_args$3"
+          ."\t\$(MAKE) \$(PASTHRU)$3$3"
+          ."$1 newmakefilepl$2"
          >me;
     $inherited;
   };
